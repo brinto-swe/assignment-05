@@ -1,7 +1,9 @@
 import { FaStar } from "react-icons/fa6";
 import type { TechnologyType } from "../type/technologiesType";
+import { useState } from "react";
 
 const Technologies = ({ technologies }: TechnologyType) => {
+    const [isSelected, setIsSelected] = useState(false);
 
     return (
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -29,7 +31,13 @@ const Technologies = ({ technologies }: TechnologyType) => {
                                     </div>
                                 </div>
                                 <div className="card-actions justify-center">
-                                    <button className="btn w-full bg-black text-white rounded-xl">Add to Stack</button>
+                                    <button
+                                        onClick={() => setIsSelected(true)}
+                                        className={`btn w-full bg-black text-white rounded-xl`}
+                                        disabled={isSelected}
+                                    >
+                                        {isSelected === true ?  "Added to Stack" : "Add to Stack"}
+                                    </button>
                                 </div>
                             </div>
                         </div>

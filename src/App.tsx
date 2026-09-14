@@ -16,14 +16,16 @@ function App() {
   const technologiesPromise = technologyFetch();
 
   return (
-    <>
-      <Nav/>
-      <Banner/>
-      <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
-        <Technologies technologiesPromise={technologiesPromise} />
-      </Suspense>
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4">
+        <Nav />
+        <Banner />
+        <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
+          <Technologies technologiesPromise={technologiesPromise} />
+        </Suspense>
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }
 

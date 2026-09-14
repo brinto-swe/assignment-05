@@ -1,4 +1,4 @@
-import { FaStar } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
 import type { TechnologyType } from "../type/technologiesType";
 import { type Dispatch, type SetStateAction } from "react";
 import { toast } from "react-toastify";

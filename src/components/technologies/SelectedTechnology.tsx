@@ -1,6 +1,7 @@
 import { type Dispatch, type SetStateAction } from 'react';
 import type { TechnologyType } from '../type/technologiesType';
 import { FaTimes } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 interface ITechnologyProps {
     selectedTechnologies : TechnologyType[];
@@ -12,6 +13,7 @@ const SelectedTechnology = ({selectedTechnologies, setSelectedTechnologies}: ITe
 
     const removeOne = (id: string) => {
         setSelectedTechnologies((prev) => prev.filter((t) => t.id !== id));
+        toast.warn('Technology removed from stack');
     };
 
     return (
@@ -26,7 +28,7 @@ const SelectedTechnology = ({selectedTechnologies, setSelectedTechnologies}: ITe
                 {hasSelectedTechnologies ? (
                     <div className='flex flex-col gap-3 mt-4'>
                         {selectedTechnologies.map((tech) => (
-                            <div key={tech.id} className='flex items-center justify-between border rounded-lg px-3 py-2'>
+                            <div key={tech.id} className='flex items-center justify-between border border-gray-300 rounded-lg px-3 py-2'>
                                 <div className='flex items-center gap-3'>
                                     <img src={tech.icon} alt={tech.name} className='w-8 h-8' />
                                     <div className='flex flex-col'>
@@ -43,7 +45,7 @@ const SelectedTechnology = ({selectedTechnologies, setSelectedTechnologies}: ITe
                         <button
                             type='button'
                             className='btn btn-outline btn-error w-full mt-2'
-                            onClick={() => setSelectedTechnologies([])}
+                            onClick={() => { setSelectedTechnologies([]); toast.warn('All technologies removed'); }}
                         >
                             Remove All
                         </button>

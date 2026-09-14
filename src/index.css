@@ -1,4 +1,12 @@
-@import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake;
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+/* DaisyUI theme should be configured via tailwind.config.cjs */
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-gray-800;
 }

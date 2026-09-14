@@ -1,4 +1,4 @@
-import React, { type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { TechnologyType } from '../type/technologiesType';
 
 interface ITechnologyProps {
@@ -26,7 +26,7 @@ const SelectedTechnology = ({selectedTechnologies, setSelectedTechnologies}: ITe
                                 className='btn btn-link btn-sm mt-2'
                                 onClick={() => setSelectedTechnologies([])}
                             >
-                                Clear stack
+                                Remove All
                             </button>
                         </div>
                     </>

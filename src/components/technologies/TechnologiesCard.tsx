@@ -27,11 +27,11 @@ const Technologies = ({ technologies, selectedTechnologies, setSelectedTechnolog
                 const isSelected = selectedTechnologies.some((item) => item.id === technology.id);
 
                 return (
-                    <div key={technology.id} className="card bg-base-100 w-full shadow-sm">
+                    <div key={technology.id} className="card bg-base-100 w-full shadow-sm rounded-lg border border-gray-100 hover:shadow-md transition">
                         <div className="card-body flex flex-col gap-6">
                             <figure className="flex justify-between">
                                 <img className="w-10" src={technology.icon} alt={technology.name} />
-                                <label className="px-3 py-1 bg-green-200 rounded-4xl border-2 border-green-500">{technology.badge}</label>
+                                <label className="px-3 py-1 bg-green-100 rounded-full border border-green-200 text-sm">{technology.badge}</label>
                             </figure>
                             <div className="flex flex-col gap-3">
                                 <h2 className="card-title">{technology.name}</h2>

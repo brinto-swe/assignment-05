@@ -8,5 +8,8 @@ html, body, #root {
 }
 
 body {
-  @apply bg-white text-gray-800;
+  background-color: #ffffff;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

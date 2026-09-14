@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Banner from "./Banner"
 import Nav from "./components/Nav"
 import Technologies from "./components/Technologies";
+import Footer from "./components/Footer";
 import type { TechnologyType } from "./components/type/technologiesType";
 
 const technologyFetch = async (): Promise<TechnologyType[]> => {
@@ -21,6 +22,7 @@ function App() {
       <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
         <Technologies technologiesPromise={technologiesPromise} />
       </Suspense>
+      <Footer />
     </>
   )
 }

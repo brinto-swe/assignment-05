@@ -1,15 +1,4 @@
-@import "tailwindcss/preflight";
-@tailwind utilities;
-
-/* DaisyUI theme should be configured via tailwind.config.cjs */
-
-html, body, #root {
-  height: 100%;
-}
-
-body {
-  background-color: #ffffff;
-  color: #111827;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake;
 }

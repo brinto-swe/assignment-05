@@ -13,7 +13,7 @@ const SelectedTechnology = ({selectedTechnologies, setSelectedTechnologies}: ITe
 
     const removeOne = (id: string) => {
         setSelectedTechnologies((prev) => prev.filter((t) => t.id !== id));
-        toast.warn('Technology removed from stack');
+        toast.warn('Technology removed from stack', { toastId: `remove-${id}` });
     };
 
     return (
@@ -45,7 +45,7 @@ const SelectedTechnology = ({selectedTechnologies, setSelectedTechnologies}: ITe
                         <button
                             type='button'
                             className='btn btn-outline btn-error w-full mt-2'
-                            onClick={() => { setSelectedTechnologies([]); toast.warn('All technologies removed'); }}
+                            onClick={() => { setSelectedTechnologies([]); toast.warn('All technologies removed', { toastId: 'remove-all' }); }}
                         >
                             Remove All
                         </button>

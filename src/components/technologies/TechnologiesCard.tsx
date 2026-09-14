@@ -16,7 +16,7 @@ const Technologies = ({ technologies, selectedTechnologies, setSelectedTechnolog
                 return prevSelectedTechnologies;
             }
 
-            toast.success(`${technology.name} added successfully`);
+            toast.success(`${technology.name} added successfully`, { toastId: `add-${technology.id}` });
             return [...prevSelectedTechnologies, technology];
         });
     };
